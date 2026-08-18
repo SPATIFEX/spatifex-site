@@ -1,0 +1,13 @@
+# Stage-0 placeholder for spatifex.com.
+#
+# Crawling is deliberately allowed. Every page carries
+# <meta name="robots" content="noindex, nofollow">, and a crawler has to be able
+# to fetch a page before it can read that tag. A Disallow rule here would hide
+# the noindex instead of reinforcing it, and the URL would stay indexable from
+# external links. Indexing is switched on by removing the meta tags, not by
+# editing this file.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://spatifex.com/sitemap.xml

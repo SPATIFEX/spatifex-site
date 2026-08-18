@@ -1,0 +1,254 @@
+/* Stage-0 placeholder styles for spatifex.com.
+   Plain CSS. No build step, no preprocessor, no @import, no web fonts, no
+   external anything: the browser makes exactly one request for this file.
+   There is no animation and no transition anywhere in this sheet, so there is
+   nothing for prefers-reduced-motion to switch off. */
+
+:root {
+  color-scheme: dark;
+  --bg: #0b0c0f;
+  --panel: #111319;
+  --border: #2a2f39;
+  --text: #f5f7fa;   /* 18.2:1 on --bg */
+  --muted: #aeb4be;  /*  9.3:1 on --bg */
+  --accent: #7ef0c3;
+  --ink: #08100e;
+  --measure: 58rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  line-height: 1.6;
+}
+
+/* Long unbroken strings must wrap rather than widen the page: horizontal
+   scrolling at 320 CSS px is a gate failure, not a cosmetic defect. */
+h1,
+h2,
+p,
+li,
+a {
+  overflow-wrap: break-word;
+}
+
+.shell {
+  width: min(100% - 2rem, var(--measure));
+  margin-inline: auto;
+}
+
+@media (max-width: 26rem) {
+  .shell {
+    width: min(100% - 1.25rem, var(--measure));
+  }
+}
+
+/* Focus must stay visible for keyboard users. The :focus rule is the floor;
+   the :not(:focus-visible) rule takes the ring back off for pointer clicks. */
+a:focus,
+[tabindex]:focus {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+a:focus:not(:focus-visible),
+[tabindex]:focus:not(:focus-visible) {
+  outline: none;
+}
+
+a:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+.skip {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 10;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-250%);
+}
+
+.skip:focus {
+  transform: none;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+}
+
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem 0;
+}
+
+.brand {
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.lang {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lang a {
+  display: inline-block;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.lang a:hover {
+  background: var(--panel);
+  color: var(--text);
+}
+
+.lang a[aria-current="page"] {
+  border-color: var(--border);
+  background: var(--panel);
+  color: var(--text);
+}
+
+.hero {
+  padding: clamp(2.5rem, 9vw, 5rem) 0 2.25rem;
+}
+
+/* The dot is decoration; the word inside the badge carries the meaning, so no
+   information here is conveyed by colour alone. */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 1.1rem;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.76rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.status::before {
+  content: "";
+  flex: none;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+h1 {
+  max-width: 24ch;
+  margin: 0 0 1.15rem;
+  font-size: clamp(1.75rem, 6.2vw, 3.1rem);
+  letter-spacing: -0.02em;
+  line-height: 1.14;
+}
+
+.lede {
+  max-width: 58ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 2.2vw, 1.18rem);
+}
+
+section {
+  padding: 0 0 2.5rem;
+}
+
+h2 {
+  margin: 0 0 0.9rem;
+  font-size: clamp(1.05rem, 3vw, 1.35rem);
+  letter-spacing: 0.01em;
+}
+
+.list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list li {
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--panel);
+}
+
+.list strong {
+  display: block;
+}
+
+.list p {
+  max-width: 58ch;
+  margin: 0.3rem 0 0;
+  color: var(--muted);
+}
+
+.note {
+  max-width: 58ch;
+  margin: 0 0 0.8rem;
+  color: var(--muted);
+}
+
+.note:last-child {
+  margin-bottom: 0;
+}
+
+.site-footer {
+  padding: 1.5rem 0 2.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.site-footer p {
+  max-width: 58ch;
+  margin: 0 0 0.45rem;
+}
+
+.site-footer p:last-child {
+  margin-bottom: 0;
+}

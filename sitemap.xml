@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The two navigable pages of the Stage-0 placeholder. 404.html is excluded
+     on purpose: it is an error response, not a page anyone should be sent to. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://spatifex.com/</loc>
+    <lastmod>2026-08-18</lastmod>
+  </url>
+  <url>
+    <loc>https://spatifex.com/ru/</loc>
+    <lastmod>2026-08-18</lastmod>
+  </url>
+</urlset>
