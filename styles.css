@@ -59,23 +59,30 @@ a {
 
 /* Focus must stay visible for keyboard users. The :focus rule is the floor;
    the :not(:focus-visible) rule takes the ring back off for pointer clicks. */
-a:focus,
-[tabindex]:focus {
+a:focus {
   outline: 3px solid var(--accent);
   outline-offset: 3px;
   border-radius: 3px;
 }
 
-a:focus:not(:focus-visible),
-[tabindex]:focus:not(:focus-visible) {
+a:focus:not(:focus-visible) {
   outline: none;
 }
 
-a:focus-visible,
-[tabindex]:focus-visible {
+a:focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 3px;
   border-radius: 3px;
+}
+
+/* The skip link's target. <main> carries tabindex="-1" so activating the link
+   moves focus itself and not only the scroll position; without it a browser
+   that does not set a sequential focus starting point sends the next Tab back
+   to the top of the page. No ring here on purpose: a 3px outline around the
+   whole page is noise rather than feedback, and the reader just chose to go
+   there. */
+main[tabindex="-1"]:focus {
+  outline: none;
 }
 
 .skip {

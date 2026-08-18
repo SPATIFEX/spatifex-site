@@ -1,13 +1,20 @@
 # Stage-0 placeholder for spatifex.com.
 #
-# Crawling is deliberately allowed. Every page carries
+# Crawling of the pages is deliberately allowed. Every page carries
 # <meta name="robots" content="noindex, nofollow">, and a crawler has to be able
-# to fetch a page before it can read that tag. A Disallow rule here would hide
+# to fetch a page before it can read that tag. A blanket Disallow here would hide
 # the noindex instead of reinforcing it, and the URL would stay indexable from
 # external links. Indexing is switched on by removing the meta tags, not by
 # editing this file.
+#
+# The two exceptions below are the Markdown files. GitHub Pages serves the whole
+# repository root, so they are reachable as URLs, and being Markdown they cannot
+# carry a meta tag of their own. This keeps them out of indexes; it does not make
+# them private, and nothing can.
 
 User-agent: *
 Allow: /
+Disallow: /README.md
+Disallow: /DEPLOYMENT.md
 
 Sitemap: https://spatifex.com/sitemap.xml

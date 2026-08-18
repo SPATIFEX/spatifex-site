@@ -16,8 +16,13 @@
   relative stylesheet link would resolve differently for /nope than for
   /ru/nope/deeper, and a root-absolute one would break under a project-pages
   preview URL. Inlining removes the question: this page is correct from any
-  depth and makes no request at all. The two links below are root-absolute
-  because they are correct on the custom domain, which is where a 404 matters.
+  depth and needs no stylesheet request. Its only subresource is the favicon
+  above, which a browser fetches on its own whether a page declares one or not.
+
+  All four references on this page - the two icons above and the two navigation
+  links below - are root-absolute, because they are correct on the custom
+  domain, which is where a 404 matters. Under a sub-path preview URL they point
+  at the wrong place; that is documented in DEPLOYMENT.md and accepted.
 -->
 <style>
   :root { color-scheme: dark; }

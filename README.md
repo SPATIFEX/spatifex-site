@@ -1,7 +1,7 @@
 # spatifex-site
 
-Stage-0 placeholder for **spatifex.com** — plain HTML and CSS, published straight from
-`main` by GitHub Pages. There is no build step, and adding one is a Stage-1
+Stage-0 placeholder for **spatifex.com** — plain HTML and CSS, published straight
+from `main` by GitHub Pages. There is no build step, and adding one is a Stage-1
 decision, not a maintenance detail.
 
 ## What is here
@@ -15,13 +15,16 @@ Twelve files, and the count is the specification rather than an accident:
 | `404.html` | Error page, self-contained (see `DEPLOYMENT.md`) |
 | `styles.css` | The only stylesheet the two content pages load |
 | `favicon.svg` | Icon, vector |
-| `favicon.ico` | Icon, 32×32, for clients that still ask for it |
+| `favicon.ico` | Icon, 32x32, for clients that still ask for it |
 | `robots.txt` | Allows crawling so the page-level `noindex` can be read |
 | `sitemap.xml` | The two navigable pages, and only those |
 | `CNAME` | `spatifex.com` — read by GitHub Pages, inert until DNS points here |
 | `.nojekyll` | Serve the tree as-is, no Jekyll pass |
 | `README.md` | This file |
 | `DEPLOYMENT.md` | How it is published, and what is deliberately not switched on |
+
+Once Pages is enabled every one of those twelve is a public URL, this file
+included. `DEPLOYMENT.md` explains why that cannot be avoided.
 
 ## What is deliberately absent
 
@@ -53,5 +56,13 @@ that stops being true, the pages change first and this line changes with them.
 ## Editing
 
 Open a file, edit it, commit. Check `DEPLOYMENT.md` before changing anything in
-`<head>`, in `robots.txt` or in `CNAME`: those four surfaces carry reasons
-that are not obvious from the markup.
+`<head>`, in `robots.txt`, in `sitemap.xml` or in `CNAME`: those four surfaces
+carry reasons that are not obvious from the markup.
+
+`main` has no `.gitignore` — a thirteenth file would break the composition, and
+plain HTML has nothing to ignore. So do Stage-1 work on `astro-foundation` in a
+**separate clone or worktree**, never by switching branches in place: an `npm
+install` there leaves a `node_modules` behind that `main` will happily offer to
+commit. Before any commit on `main`, `git status` must show those twelve files
+and nothing else. No hook and no workflow enforces this — the repository has
+neither.
