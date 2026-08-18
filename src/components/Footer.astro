@@ -1,0 +1,10 @@
+---
+const { lang = 'en' } = Astro.props;
+const isRu = lang === 'ru';
+---
+<footer>
+  <div class="shell footer-row">
+    <span>© {new Date().getFullYear()} Spatifex</span>
+    <span>{isRu ? 'Разработка ведётся открыто и поэтапно.' : 'Built deliberately, one verified stage at a time.'}</span>
+  </div>
+</footer>

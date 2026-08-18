@@ -1,0 +1,16 @@
+---
+        import BaseLayout from '../../layouts/BaseLayout.astro';
+        import Status from '../../components/Status.astro';
+        const lang = 'ru';
+        ---
+        <BaseLayout lang={lang} title="Spatifex — Пространственные программные продукты для архитектуры, инженерии и строительства." description="Пространственные программные продукты для архитектуры, инженерии и строительства.">
+          <section class="shell hero">
+            <div><p class="eyebrow">Spatifex</p><Status label="В разработке" /></div>
+            <h1>Пространственные программные продукты для архитектуры, инженерии и строительства.</h1>
+            <p class="lede">Проект создаётся поэтапно: от проверяемой технической основы к полноценной цифровой среде.</p>
+            <div class="actions"><a class="button primary" href="/ru/products/">Узнать больше</a></div>
+          </section>
+          <section class="shell"><h2 class="sr-only">Ключевые направления</h2><div class="grid"><article class="card"><h3>Связанный контекст</h3><p>Модели, решения и выпуски остаются связанными, а не превращаются в набор разрозненных файлов.</p></article>
+<article class="card"><h3>Контроль человека</h3><p>ИИ сможет помогать, но проект останется редактируемым, проверяемым и обратимым.</p></article>
+<article class="card"><h3>Открытое направление</h3><p>openBIM, контролируемые производные данные и заменяемая инфраструктура остаются приоритетами.</p></article></div></section>
+        </BaseLayout>

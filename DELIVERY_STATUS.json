@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "status": "SOURCE_FOUNDATION_LOCKFILE_REQUIRED",
+  "deployReady": false,
+  "requiredBeforeDeploy": [
+    "clean npm install on Node 22",
+    "commit package-lock.json",
+    "npm run verify on Windows",
+    "320px browser reflow check",
+    "a11y/SEO/security smoke",
+    "GitHub Actions pinned to reviewed full SHA",
+    "DNS/HTTPS receipt"
+  ]
+}

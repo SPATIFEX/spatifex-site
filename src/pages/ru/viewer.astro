@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Status from '../../components/Status.astro';
+const lang = 'ru';
+---
+<BaseLayout lang={lang} title="Spatifex Viewer — Spatifex" description="Spatifex Viewer — браузерное пространственное ядро на базе That Open для просмотра и взаимодействия с BIM.">
+  <section class="shell hero">
+    <div><p class="eyebrow">Spatifex</p><Status label="Направление" /></div>
+    <h1>Spatifex Viewer</h1>
+    <p class="lede">Spatifex Viewer — браузерное пространственное ядро на базе That Open для просмотра и взаимодействия с BIM.</p>
+  </section>
+  <section class="shell"><article class="card"><h2>Текущий статус</h2><p>Эта поверхность развивается параллельно с платформой и будет пополняться только подтверждёнными материалами.</p></article></section>
+</BaseLayout>

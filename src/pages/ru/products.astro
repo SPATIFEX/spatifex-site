@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Status from '../../components/Status.astro';
+const lang = 'ru';
+---
+<BaseLayout lang={lang} title="Продукты — Spatifex" description="Spatifex развивает Plyten и Spatifex Viewer как связанные, но самостоятельные продукты.">
+  <section class="shell hero">
+    <div><p class="eyebrow">Spatifex</p><Status label="Направление" /></div>
+    <h1>Продукты</h1>
+    <p class="lede">Spatifex развивает Plyten и Spatifex Viewer как связанные, но самостоятельные продукты.</p>
+  </section>
+  <section class="shell"><article class="card"><h2>Текущий статус</h2><p>Эта поверхность развивается параллельно с платформой и будет пополняться только подтверждёнными материалами.</p></article></section>
+</BaseLayout>
